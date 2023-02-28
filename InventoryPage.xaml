@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="BookStore.InventoryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:controls ="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Backgrouund1.png" Opacity="0.3"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" x:Name="exitBtn" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50" Width="50" Click="exitBtnClicked"/>
+        <controls:DataGrid Name="InventoryData" Grid.RowSpan="2" Grid.ColumnSpan="3" AutoGenerateColumns="True"  Width="1300" Height="760" FontFamily="Aharoni" FontSize="12" AllowFocusOnInteraction="False"
+                        CanUserSortColumns="True" AlternatingRowBackground="AliceBlue">
+        </controls:DataGrid>
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal">
+            <Button Content="Add new Item" FontFamily="Gabriola" FontSize="25" Width="200" Height="40" Background="#FF3A77C8" BorderBrush="#FF204E8C" Tapped="AddItem_Tapped" />
+            <Button Content="Edit discounts" FontFamily="Gabriola" FontSize="25"  Width="200" Height="40" Background="#FF3A77C8" BorderBrush="#FF204E8C" Tapped="AddDiscount_Tapped" />
+            <Button Content="Remove Item" FontFamily="Gabriola" FontSize="25"  Width="200" Height="40" Background="#FF3A77C8" BorderBrush="#FF204E8C" Tapped="RemoveItem_Tapped"/>
+            <Button Content="Back to main" FontFamily="Gabriola" FontSize="25"  Width="200" Height="40" Background="#FF3A77C8" BorderBrush="#FF204E8C" Tapped="exitBtnClicked" />
+        </StackPanel>
+    </Grid>
+</Page>

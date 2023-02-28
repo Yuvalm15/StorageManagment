@@ -1,0 +1,81 @@
+﻿<Page
+    x:Class="BookStore.CustomerAdding"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BookStore"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Image Source="Assets\Background4.jpg" Height="3500" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <Grid Grid.Row="0">
+            <TextBlock x:Name="dateTimeTbl" Text="" FontSize="30" FontFamily="David" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock Text="Add New Customer" FontSize="40" FontWeight="Bold" FontFamily="David" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Image Source="Assets/Exit.png" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50"/>
+            <Button x:Name="exitBtn" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50" Width="50" Click="exitBtnClicked"/>
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+
+                    <TextBlock Text="First Name:" FontSize="32" FontFamily="David" HorizontalAlignment="Center"/>
+                    <TextBox Name="firstNameTbx" Text="" FontSize="32" FontFamily="David" Width="250"/>
+
+                    <TextBlock Text="Surname Name:" FontSize="32" FontFamily="David" HorizontalAlignment="Center" Margin="0,45,0,0"/>
+                    <TextBox Name="sureNameTbx" Text="" FontSize="32" FontFamily="David" Width="250"/>
+
+
+                    <TextBlock Text="Personal ID Number:"  FontSize="32" FontFamily="David" HorizontalAlignment="Center" Margin="0,45,0,0" />
+                    <TextBox Name="IDTbx" Text="" FontSize="32" FontFamily="David" Width="250" MaxLength="9"/>
+
+
+
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <TextBlock Text="Phone Number:" FontSize="32" FontFamily="David" HorizontalAlignment="Center" />
+                    <TextBox Name="phoneNumberTbx" Text="" FontSize="32" FontFamily="David" Width="250"/>
+
+                    <TextBlock Text="e-Mail:" FontSize="32" FontFamily="David" HorizontalAlignment="Center" Margin="0,45,0,0"/>
+                    <TextBox Name="emailTbx" Text="" FontSize="32" FontFamily="David" Width="250"/>
+
+                    <TextBlock Text="Date of Birth:" FontSize="32" FontFamily="David" HorizontalAlignment="Center" Margin="0,45,0,0"/>
+                    <CalendarDatePicker Name="birthdayDatePicker" FontSize="32" FontFamily="David" Height="48" Width="250"/>
+
+
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <TextBlock x:Name="errorTbl" Text="" Foreground="Red" FontSize="20" FontFamily="David" HorizontalAlignment="Center" Margin="0,118,0,4" RenderTransformOrigin="0.452,1.341"/>
+            <Button x:Name="submitCustomerBtn" Content="Submit" Foreground="White" FontFamily="David" FontSize="30" Height="60" Width="200" HorizontalAlignment="Center" Click="Submit_Clicked">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5B9533"/>
+                        <GradientStop Color="#FF37730D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

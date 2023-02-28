@@ -1,0 +1,99 @@
+﻿<Page
+    x:Class="BookStore.AddItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BookStore"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Image Source="Assets\Background4.jpg" Height="3500" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <Grid Grid.Row="0">
+            <TextBlock x:Name="dateTimeTbl" Text="" FontSize="30" FontFamily="David" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock Text="Add New Item" FontSize="40" FontWeight="Bold" FontFamily="David" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Image Source="Assets/Exit.png" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50"/>
+            <Button x:Name="exitBtn" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50" Width="50" Click="exitBtnClicked"/>
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+
+                    <TextBlock Text="Item Type:" FontSize="32" FontFamily="David" HorizontalAlignment="Center"/>
+                    <ComboBox Name="itemTypeCmbx" Text="" FontSize="32" FontFamily="David" Width="250" HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="Item Name:" FontSize="32" FontFamily="David" HorizontalAlignment="Center" Margin="0,40,0,0"/>
+                    <TextBox Name="itemNameTbx" Text="" FontSize="32" FontFamily="David" Width="250"/>
+
+                    <TextBlock Text="Item Price:" FontSize="32" FontFamily="David" HorizontalAlignment="Center" Margin="0,40,0,0"/>
+                    <TextBox Name="itemPriceTbx" Text="" FontSize="32" FontFamily="David" Width="250"/>
+
+
+                    <TextBlock Text="Author:"  FontSize="32" FontFamily="David" HorizontalAlignment="Center" Margin="0,45,0,0" />
+                    <TextBox Name="itemAuthorTbx" Text="" FontSize="32" FontFamily="David" Width="250" MaxLength="9"/>
+
+
+
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <TextBlock Text="Amount:" FontSize="32" FontFamily="David" HorizontalAlignment="Center" />
+                    <TextBox Name="itemAmountTbx" Text="" FontSize="32" FontFamily="David" Width="250"/>
+
+                    
+                    <TextBlock Text="Publishing Date:" FontSize="32" FontFamily="David" HorizontalAlignment="Center" Margin="0,45,0,0"/>
+                    <CalendarDatePicker Name="itemPublishDatepicker" FontSize="32" FontFamily="David" Height="48" Width="250"/>
+
+                    <TextBlock Text="Genre:" FontSize="32" FontFamily="David" HorizontalAlignment="Center" Margin="0,45,0,0"/>
+                    <ComboBox Name="itemGenreCmbx" Text="" FontSize="32" FontFamily="David" Width="250"/>
+
+                    <TextBlock x:Name="ISBNTbl" Text="ISBN:" FontSize="28" FontFamily="David" HorizontalAlignment="Left" Margin="0,45,0,0"/>
+
+
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Image x:Name="itemImg" HorizontalAlignment="Center" VerticalAlignment="Center" Height="250" Width="200" Margin="0,0,0,100"/>
+                <Button x:Name="uploadItemImgBtn" Content="Upload" Foreground="White" FontFamily="David" FontSize="30" Height="60" Width="200" HorizontalAlignment="Center" Margin="0,230,0,0" Click="uploadItemImgClicked">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF5B9533"/>
+                            <GradientStop Color="#FF37730D" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </Grid>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <TextBlock x:Name="badInputTbx" Text="" Foreground="Red" FontFamily="David" FontSize="30" Height="60" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="submitCustomerBtn" Content="Add" Foreground="White" FontFamily="David" FontSize="30" Height="60" Width="200" HorizontalAlignment="Center" Click="addItemClicked">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5B9533"/>
+                        <GradientStop Color="#FF37730D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>
